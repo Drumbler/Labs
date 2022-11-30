@@ -15,7 +15,7 @@ public class Example1 {
 
         System.out.println("hello " + fam + " " + fName + " " + sName);
 
-
+        scan.close();
     }
 
 
