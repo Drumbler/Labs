@@ -16,7 +16,6 @@ public class Example3_2 {
         int len = scan.nextInt();
         System.out.print(num0 + " " + num1 + " ");
 
-
         int i = 3;
         while (i <= len) {
             i++;
@@ -24,14 +23,6 @@ public class Example3_2 {
             System.out.print(num2 + " ");
             num0 = num1;
             num1 = num2;
-
-
-
-
         }
-
-
-
-
     }
 }

@@ -47,12 +47,6 @@ public class Example1 {
 
 
             }
-
-
-
-
-
     }
-
 
 }

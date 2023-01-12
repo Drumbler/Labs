@@ -18,6 +18,4 @@ public class Example5 {
         else
             System.out.println("Одно из чисел не удовлетворяет условиям");
     }
-
-
 }

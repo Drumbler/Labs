@@ -34,8 +34,8 @@ public class Example8 {
                     default -> System.out.println("Введите корректный ответ");
                 }
             }
-        }
     }
+}
 
 
 

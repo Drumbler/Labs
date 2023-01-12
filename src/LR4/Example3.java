@@ -15,7 +15,6 @@ public class Example3 {
                  twoDimArray[i][j] = 2;
                  System.out.print(twoDimArray[i][j] + " ");
              }
-
          }
         }
     }

@@ -21,14 +21,6 @@ public class Example3 {
             System.out.print(num2 + " ");
             num0 = num1;
             num1 = num2;
-
-
-
-
-        }
-
-
-
-
         }
     }
+}

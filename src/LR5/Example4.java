@@ -1,8 +1,6 @@
 package LR5;
 
 public class Example4 {
-
-
     public static void main(String[] args) {
 
         Act arg2 = new Act(12, 'A');

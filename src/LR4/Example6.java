@@ -32,7 +32,6 @@ public class Example6 {
                 System.out.print(array[i][j]);
             }
             System.out.println();
-
         }
     }
 }

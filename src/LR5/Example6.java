@@ -1,8 +1,5 @@
 package LR5;
 
-import java.sql.SQLOutput;
-import java.util.Scanner;
-
 public class Example6 {
     private int max = Integer.MIN_VALUE;
     private int min = Integer.MAX_VALUE;

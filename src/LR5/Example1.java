@@ -37,7 +37,6 @@ public class Example1 {
             }
         }
     }
-
     public static char setSymb() {
         return scan.next().charAt(0);
     }
@@ -46,12 +45,10 @@ public class Example1 {
         System.out.println((int) code1);
         return;
     }
-
     public static void codeSymb(char code1) {
         System.out.println(code1 + " " +(int) code1);
         return;
     }
-
 }
 
 
