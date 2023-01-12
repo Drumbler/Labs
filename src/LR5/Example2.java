@@ -11,7 +11,7 @@ public class Example2 {
     }
 
     public static void main(String[] args) {
-        Example2 sheesh = new Example2();
-        sheesh.printRange();
+        Example2 act = new Example2();
+        act.printRange();
     }
 }

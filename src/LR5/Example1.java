@@ -11,6 +11,7 @@ public class Example1 {
                 "setSymb - для установки символа \n" +
                 "code - возвращает номер символа \n" +
                 "codeSymb - возвращает символ и код символа");
+        Example1 act = new Example1();
         while (true) {
 
             switch (scan.nextLine()) {
