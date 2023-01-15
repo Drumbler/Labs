@@ -8,17 +8,17 @@ package LR7.Example2;
 Доступное только для чтения свойство результатом возвращает длину текстовой строки.
  */
 public class SuperClass{
-    //приватным текстовым полем.
+
     private String str1;
 
     SuperClass() {setStr1();}
-    //Объект суперкласса создается передачей одного текстового аргумента конструктору.
+
     SuperClass (String str1){setStr1(str1);}
-    //метод для присваивания значения полю без параметров
+
     public void setStr1 (){
         this.str1 = "здесь ничего нет";
     }
-    //метод для присваивания значения полю с одним текстовым параметром
+
     public void setStr1 (String str1){
         this.str1 = str1;
     }
@@ -27,9 +27,9 @@ public class SuperClass{
         //   System.out.println(str1);
         return str1;
     }
-    //Доступное только для чтения свойство результатом возвращает длину текстовой строки.
+
     public int getStr1length(){
-        //   System.out.println("Длина текстовой строки="+str1.length());
+
         return str1.length();
     }
 

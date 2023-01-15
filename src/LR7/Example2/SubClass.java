@@ -2,16 +2,12 @@ package LR7.Example2;
 
 public class SubClass extends SuperClass {
     private String str2;
-    //В подклассе появляется дополнительное открытое целочисленное поле.
+
     public int int1;
 
-    //версия метода без параметров,
     SubClass() {setStr1();}
-    //версия метода с текстовым параметром,
     SubClass(String str2) {setStr1(str2);}
-    //версия метода с целочисленным параметром,
     SubClass(int int1) {setStr1(); this.setInt1(int1);}
-    //версия метода с текстовым и целочисленным параметром.
     SubClass(String str2, int int1) {setStr1(str2); this.setInt1(int1);}
 
     public void setInt1(int int1) {
@@ -26,17 +22,15 @@ public class SubClass extends SuperClass {
     }
 
     public int getInt1(){
-        //   System.out.println(str1);
+
         return int1;
     }
 
     public String getStr1(){
-        //   System.out.println(str1);
         return str2;
     }
 
     public int getStr1length(){
-        //   System.out.println("Длина текстовой строки="+str1.length());
         return str2.length();
     }
 
