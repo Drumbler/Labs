@@ -7,11 +7,9 @@ public class SupClass1 {
     public void setStr1(String str1) {
         this.str1 = str1;
     }
-    //конструктор с текстовым параметром
     SupClass1(String str1){
         this.setStr1(str1);
     }
-    //метод, при вызове которого в консольном окне отображается название класса и значение поля
     public void PrintToString() {
         String ClassNameAndFieldValue;
         ClassNameAndFieldValue =

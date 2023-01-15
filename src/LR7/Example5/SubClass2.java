@@ -6,13 +6,11 @@ public class SubClass2 extends SupClass1 {
     public void setInt1(int int1) {
         this.int1 = int1;
     }
-    //конструктор с двумя параметрами
     SubClass2(String str1, int int1) {
         super(str1);
         this.setInt1(int1);
     }
 
-    //переопределен метод для отображения значений полей объекта и названия класса
     @Override
     public void PrintToString() {
         String SecondFieldValue =
