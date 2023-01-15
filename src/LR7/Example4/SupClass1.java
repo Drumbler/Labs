@@ -6,11 +6,9 @@ public class SupClass1 {
     public void setChar1(char char1) {
         this.char1 = char1;
     }
-    //конструктор с одним параметром
     SupClass1(char char1){
         this.setChar1(char1);
     }
-    //конструктор копии
     SupClass1(SupClass1 copy){ this.setChar1(copy.char1); }
 
     @Override
