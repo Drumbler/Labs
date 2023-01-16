@@ -1,42 +1,43 @@
 package LR8;
-import java.io.*;
-import static java.lang.Character.toLowerCase;
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+
 public class Example2 {
-    public static String SplitAndSort(String in) {
-        String replacedString = in.replace(",", "").replace(".", "").
-                replace("?", "").replace("!", "");
-        String[] arrFirst = replacedString.split(" ");
-        StringBuilder outSorted;
-        outSorted = new StringBuilder();
-        String searchedChars = "бвгджзйклмнпрстфхцчшщ";
-        int wordCounter = 0;
-        for (int i = 0; i < arrFirst.length; i++) {
-            char c = toLowerCase(arrFirst[i].charAt(0));
-            if (searchedChars.indexOf(c) != -1) {
-                wordCounter++;
-                String toAdd = arrFirst[i] + " ";
-                outSorted.append(toAdd);
+    public static void readAllByByte(InputStream in) throws IOException {
+        while (true) {
+            int oneByte = in.read();
+            if (oneByte != -1) {
+                System.out.print((char) oneByte);
+            } else {
+                System.out.print("\n" + "end");
+                break;
             }
         }
-        String s = String.valueOf(outSorted.append(wordCounter));
-        return s;
     }
 
-    public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("F:\\Listen\\File01.txt"));
-             BufferedWriter rw = new BufferedWriter(new FileWriter("F:\\Listen\\File02.txt")))
-        {
-            int lineCounter = 0;
-            String out;
-            while ((out = br.readLine()) != null) {
-                lineCounter++;
-                String valueOut = SplitAndSort(out);
-                System.out.println(lineCounter + ": " + valueOut);
-                rw.write(lineCounter + ": " + valueOut);
-                rw.newLine();
-            }
+    public static void main(String[] args) throws IOException {
+        try {
+            InputStream inFile = new FileInputStream("C:\\temp\\text.txt");
+            readAllByByte(inFile);
+            System.out.print("\n\n\n");
+            inFile.close();
+
+
+            InputStream inUrl = new URL("https://google.com/").openStream();
+            readAllByByte(inUrl);
+            System.out.print("\n\n\n");
+            inUrl.close();
+
+
+            InputStream inArray = new ByteArrayInputStream(new byte[] {7, 9, 3, 7, 4});
+            readAllByByte(inArray);
+            System.out.print("\n\n\n");
+            inArray.close();
         } catch (IOException e) {
-            System.out.println("Ошибка ввода вывода: " + e);
+            System.out.println("Ошибка: " +e);
         }
     }
 

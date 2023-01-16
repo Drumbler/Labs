@@ -1,48 +1,39 @@
 package LR8;
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
 public class Example3 {
-
-    public static void main(String[] args) {
-        String[] arrayStr = {"Первая строка текста", "Вторая строка текста"};
-        Double[] arrayD = {-1.25, 2.583, 9.454, -4.534160, -0.1114};
-
-        try {
-            DataOutputStream wr = new DataOutputStream(new FileOutputStream("F:\\Listen\\MyFile04.txt"));
-            for (int i = 0; i < arrayStr.length; i++) {
-                wr.writeUTF(arrayStr[i]);
-            }
-
-            for (int i = 0; i < arrayD.length; i++) {
-                wr.writeDouble(arrayD[i]);
-            }
-
-            wr.flush();
-            wr.close();
-
-            DataInputStream rd = new DataInputStream(new FileInputStream("F:\\Listen\\File03.txt"));
-            DataOutputStream wr2 = new DataOutputStream(new FileOutputStream("F:\\Listen\\File04.txt"));
-            for (int i = 0; i < arrayStr.length; i++) {
-                String str1 = rd.readUTF();
-                if (i==1) {
-                    wr2.writeUTF(str1);
-                    System.out.println(str1);
+    public class File_ByteRead_SamBuff {
+        public static void readAllByArray(InputStream in) throws IOException {
+            byte[] buff = new byte[5];
+            while (true) {
+                int count = in.read(buff);
+                if (count != -1) {
+                    System.out.println("количество = " + count + ", buff = " + Arrays.toString(buff) + ", str =" + new String(buff, 0, count, "cp1251"));
+                } else {
+                    break;
                 }
             }
-            for (int i = 0; i < arrayD.length; i++) {
-                double num = rd.readDouble();
-                if (num > 0) {
-                    wr2.writeDouble(num);
-                    System.out.println(num);
-                }
-            }
-            rd.close();
-            wr2.flush();
-            wr2.close();
         }
-        catch (IOException e) {
-            System.out.println("Ошибка ввода: " + e);
+
+        public static void main(String[] args) throws IOException {
+            String fileName = "F:\\MyFile1.txt";
+            InputStream inFile = null;
+            try {
+                inFile = new FileInputStream(fileName);
+                readAllByArray(inFile);
+            } catch (IOException e) {
+                System.out.println("Ошибка открытия-закрытия файла " + fileName + e);
+            } finally {
+                if (inFile != null) {
+                    try {
+                        inFile.close();
+                    } catch (IOException ignore) {
+                    }
+                }
+            }
         }
     }
+
 }
-
-

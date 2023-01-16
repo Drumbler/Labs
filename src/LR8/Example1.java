@@ -1,29 +1,26 @@
 package LR8;
-import java.io.*;
+import java.io.File;
+
 public class Example1 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = null;
-        PrintWriter out = null;
+    public static void main(String[] args) {
         try {
-            br = new BufferedReader(
-                    new InputStreamReader(
-                            new FileInputStream("F:\\Listen\\MyFile1.txt"), "cp1251"));
-
-            out = new PrintWriter("F:\\Listen\\MyFile2.txt", "cp1251");
-
-            int lineCount = 0;
-            String s;
-            while ((s = br.readLine()) != null) {
-                lineCount++;
-                out.println(lineCount + ": " + s);
+            File f1 = new File("MyFile.txt");
+            f1.createNewFile();
+            if(f1.exists()) {
+                System.out.println("Создан!!!");
+                System.out.println("Полный путь 1: " + f1.getAbsolutePath());
             }
-        } catch (IOException e) {
-            System.out.println("Ошибка!!!");
-        } finally {
-            br.close();
-            out.flush();
-            out.close();
+
+            File f2 = new File("C:\\Users\\Даниил\\Downloads\\MyFile2.txt");
+            f2.createNewFile();
+            System.out.println("Полный путь 2: " + f2.getAbsolutePath());
+
+            File f3 = new File("D:\\Papka1\\Papka2\\Papka3");
+            f3.mkdirs();
+            System.out.println("Полный путь 3: "+ f3.getAbsolutePath());
+        } catch (Exception e) {
+            System.out.println("Ошибка!!! " + e);
         }
     }
-
 }
+
