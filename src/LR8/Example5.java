@@ -29,5 +29,4 @@ public class Example5 {
             System.out.println(" " + e);
         }
     }
-
 }

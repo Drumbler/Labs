@@ -20,5 +20,4 @@ public class Example6 {
             out.close();
         }
     }
-
 }
